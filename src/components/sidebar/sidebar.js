@@ -3,6 +3,7 @@ import { Box, Button, Typography } from '@mui/material';
 import ListIcon from '@mui/icons-material/List'
 import HomeIcon from '@mui/icons-material/Home';
 import CategoryIcon from '@mui/icons-material/Category';
+import HiHome from 'react-icons/hi';
 
 
 
@@ -16,7 +17,7 @@ export const Sidebar = ({handleShift}) => {
         return <Button sx = {{ display: "block", margin: "2vh 0vw 2vh 1vw", color: "#57201B", fontSize: "1.5vh" }}>
             <Box sx={{display:"flex", justifyContent:"left", verticalAlign:"center"}}>
                 {name === 'home'
-                    ? <HomeIcon sx={{fontSize: "2.5vh", color:"#57201B"}}/>
+                    ? <HiHome sx={{fontSize: "2.5vh", color:"#57201B"}}/>
                     : <CategoryIcon sx={{fontSize: "2.5vh", color:"#57201B", verticalAlign:"center"}}/>
                 }
                 {expand
