@@ -3,9 +3,10 @@ import { Box, Button, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu'
 import HomeIcon from '@mui/icons-material/Home';
 import CategoryIcon from '@mui/icons-material/Category';
-
-
-
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+// import home from '.pages/home.js'
+// import about from '.pages/about.js'
+// import submit from '.pages/submit.js'
 
 
 export const Sidebar = ({handleShift}) => {
@@ -13,18 +14,21 @@ export const Sidebar = ({handleShift}) => {
     // make the categories slide down
     // allow for selections
 
-    const button_sidebar = (name) => {
-        return <Button sx = {{ display: "block", margin: "2vh 0vw 2vh 1vw", color: "#57201B", fontSize: "1.5vh" }}>
-            <Box sx={{display:"flex", justifyContent:"left", verticalAlign:"center"}}>
-                {name === 'home'
-                    ? <HomeIcon sx={{fontSize: "2.5vh", color:"#57201B"}}/>
-                    : <CategoryIcon sx={{fontSize: "2.5vh", color:"#57201B", verticalAlign:"center"}}/>
-                }
-                {expand
-                    ? <Typography variant="h5" sx={{marginLeft:"10px"}}>{name}</Typography>
-                    : <></>
-                }
-            </Box>
+    const button_sidebar = (name, page) => {
+        return <Button sx = {{ display: "block", margin: "2vh 0vw 2vh 1vw", color: "#57201B", fontSize: "1.5vh"}}>
+            <a href={page}>
+                <Box sx={{display:"flex", justifyContent:"left", verticalAlign:"center"}}>
+                    {name === 'home'
+                        ? <HomeIcon sx={{fontSize: "2.5vh", color:"#57201B"}}/>
+                        : <CategoryIcon sx={{fontSize: "    2.5vh", color:"#57201B", verticalAlign:"center"}}/>
+                    }
+                    {expand
+                        ? <Typography variant="h5" sx={{marginLeft:"10px"}}>{name}</Typography>
+                        : <></>
+                    }
+                </Box>
+            </a>
+            
             
         </Button>;
     }
@@ -34,14 +38,7 @@ export const Sidebar = ({handleShift}) => {
 
     const expandSidebar = () => {
         setExpand(!expand);
-        if(expand){
-            sidebar_width = "15vw";
-            handleShift("6vw");
-        }
-        else{
-            sidebar_width = "4vw";
-            handleShift("17vw");
-        }
+        handleShift(expand ? "6vw" : "17vw");
     }
 
     const Sidebar = () => {
@@ -57,11 +54,28 @@ export const Sidebar = ({handleShift}) => {
             
             <MenuIcon sx = {{margin:"8px 0 0 8px", fontSize: "4vh", color: "#57201B"}} onClick={expandSidebar}/>
 
-            <>{button_sidebar("home")}</>
-            <>{button_sidebar("categories")}</>
-            <>{button_sidebar("support")}</>
+            <>{button_sidebar("home", "/")}</>
+            <>{button_sidebar("categories", "/categories")}</>
+            <>{button_sidebar("support", "/support")}</>
+            <>{button_sidebar("submit", "/submit")}</>
         </Box>
     }
 
     return <Sidebar/>
-}
+    // function App() {
+    //     return (
+    //       <>
+    //         <Router>    
+    //           <Sidebar />
+    //           <Routes>
+    //             <Route path='/' component={home} />
+    //             <Route path='/about' component={about} />
+    //             <Route path='/submit' component={submit}/>
+    //           </Routes>
+    //         </Router>
+    //       </>
+    //     );
+        
+        
+   }
+
