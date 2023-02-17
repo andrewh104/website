@@ -85,12 +85,13 @@ export const HomePage = () => {
     return (
         // outside box
         <Box className='everything'>
-            
+            <Box>
             <Upload_button/>
+            </Box>
+            
             <Box><Sidebar handleShift={handleShift}/></Box>
             
-
-            <Box className="main_div" sx={{marginLeft: leftMargin, width: mainWidth}}>
+            <Box className="main_div" sx={{width: mainWidth}}>
                 <Header/>
                 {/* block 1 */}
                 <Box className="block">

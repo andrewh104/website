@@ -15,15 +15,18 @@ export const Sidebar = ({handleShift}) => {
     // allow for selections
 
     const button_sidebar = (name, page) => {
-        return <Button sx = {{ display: "block", margin: "2vh 0vw 2vh 1vw", color: "#57201B", fontSize: "1.5vh"}}>
-            <a href={page}>
+        return <Button sx = {{ display: "block", margin: "2vh 0vw 1vh 0vw", color: "#57201B", fontSize: "1.5vh"}}>
+            <a href={page}
+                style = {{
+                color: "black", backgroundColor: "none", textDecoration: "none"
+                }}>
                 <Box sx={{display:"flex", justifyContent:"left", verticalAlign:"center"}}>
                     {name === 'home'
                         ? <HomeIcon sx={{fontSize: "2.5vh", color:"#57201B"}}/>
-                        : <CategoryIcon sx={{fontSize: "    2.5vh", color:"#57201B", verticalAlign:"center"}}/>
+                        : <CategoryIcon sx={{fontSize: "2.5vh", color:"#57201B", verticalAlign:"center"}}/>
                     }
                     {expand
-                        ? <Typography variant="h5" sx={{marginLeft:"10px"}}>{name}</Typography>
+                        ? <Typography variant="h6" sx={{marginLeft:"10px"}}>{name}</Typography>
                         : <></>
                     }
                 </Box>
@@ -43,16 +46,16 @@ export const Sidebar = ({handleShift}) => {
 
     const Sidebar = () => {
         return <Box sx = {{
-                            height: "95vh", 
+                            height: "100vh", 
                             top: "5",
+
                             width: {sidebar_width}, 
-                            display: "block", 
-                            position: "fixed",
+                            backgroundColor: "white",
                             borderRight: "solid 1px"
                             }}
                 >
             
-            <MenuIcon sx = {{margin:"8px 0 0 8px", fontSize: "4vh", color: "#57201B"}} onClick={expandSidebar}/>
+            <MenuIcon sx = {{margin:"8px 0 0 0px", fontSize: "4vh", color: "#57201B"}} onClick={expandSidebar}/>
 
             <>{button_sidebar("home", "/")}</>
             <>{button_sidebar("categories", "/categories")}</>

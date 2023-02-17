@@ -178,16 +178,17 @@ export const Upload_button = () => {
 
     const button = (button_text) => {
         return (
+            
         <Button onClick={() => setUpload(!upload)}>            
-            <Collapse orientation="horizontal" in={upload} collapsedSize={40}>
+            {/* <Collapse orientation="horizontal" in={upload} collapsedSize={40}> */}
                 <Box className="but">
                     <a className="butText">{button_text} </a>
-                    {upload
+                    {/* {upload
                         ? <CloseFullscreenOutlinedIcon className='butText'/>
                         : <SellOutlinedIcon className='butText'/>
-                    }
+                    } */}
                 </Box>
-            </Collapse>
+            {/* </Collapse> */}
         </Button>
         )
     }
@@ -200,7 +201,7 @@ export const Upload_button = () => {
     
 
     return (
-    <Box>
+    <Box sx={{ position: "fixed" }}>
         {
             upload ?
             <>

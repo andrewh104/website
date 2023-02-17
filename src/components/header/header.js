@@ -10,8 +10,7 @@ export const Header = () => {
             {/* left side */}
             <div>
                 <a href='/' className='header-logo'>
-                    <img src={process.env.PUBLIC_URL + 'images/logo_transparent.png'} className="header-logo the-logo" title='Home page'/>
-                    <div className='hl_bg'/>
+                    <img src={process.env.PUBLIC_URL + 'images/logo_transparent.png'} className="header-logo" title='Home page'/>
                 </a>
             </div>
 

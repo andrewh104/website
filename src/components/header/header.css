@@ -15,46 +15,8 @@
     top: 0px;
     margin-top: 1vh;
     margin-left: 1vw;
-    position: relative;
     width: 9vw;
     height: auto;
-}
-
-.the-logo{
-    position: absolute;
-    z-index: 0;
-}
-
-.hl_bg{
-    position: relative;
-    margin-left: 1vw;
-    width: 8vw;
-    height: 8vw;
-}
-
-.hl_bg:before{
-    position: relative;
-    content: "";
-    display: block;
-    width: 8vw;
-    height: 8vw;
-    transform: rotate(45deg);
-}
-
-.hl_bg:hover{
-    background: rgba(200, 180, 150, .08);
-    animation: 2.5s rotate infinite linear;
-}
-
-.hl_bg:hover:before{
-    background: rgba(200, 180, 150, .08);
-}
-
-.hl_bg:hover .the-logo{
-    animation: 2.5s rotate infinite linear;
-    animation-direction: reverse;
-    top: 0;
-    left: 0;
 }
 
 .right-group{
